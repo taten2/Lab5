@@ -41,6 +41,7 @@ public class AIContoller : MonoBehaviour
                 anim.SetBool("Alert", false);
                 anim.SetBool("Walking", true);
                 ChangeWaypoint();
+                agent.speed = 0.8f;
             }
         }
         RayUpdate();
@@ -82,6 +83,7 @@ public class AIContoller : MonoBehaviour
         anim.SetBool("Alert", true);
         chasing = true;
         attention = 5.0f;
+        agent.speed = 5;
     }
 
     void ChangeWaypoint()

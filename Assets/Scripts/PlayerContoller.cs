@@ -14,7 +14,7 @@ public class PlayerContoller : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         agent = GetComponent<NavMeshAgent>();
-        start = transform.position;
+        start = new Vector3(transform.position.x, transform.position.y, transform.position.z);
     }
 
     // Update is called once per frame
@@ -43,6 +43,11 @@ public class PlayerContoller : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        transform.position = start;
+        print("bump");
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            print("AAAHHH!!!!!");
+            transform.position = start;
+        }
     }
 }
